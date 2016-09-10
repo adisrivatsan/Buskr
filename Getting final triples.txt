@@ -1,0 +1,17 @@
+// get /enterprise/merchants/{id}
+// partition by city
+// get /enterprise/transfer
+// partition by city
+// get <some geolocation API to convert addresses into lat long>
+// partition by city
+
+// join /enterprise/transfer table with /enterprise/merchants/{id} by merchants/{id}
+
+// join /enterprise/transfer table with geolocation table
+
+// aggregate transaction values by date (sum)
+
+// truncate lat long values (nearest whatever)
+// average by lat long
+
+// final result is average transaction sum per day by (lat, long)
