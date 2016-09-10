@@ -20,12 +20,17 @@ var mymap = L.map('mapid').setView([37.34505086, -121.93416595], 13);
     mymap.on('click', onMapClick);
     mymap.scrollWheelZoom.disable();
 
-    var heat = L.heatLayer([
+    /*var heat = L.heatLayer([
     [37.34505086, -121.93416595, 5],
     [37.34505086, -121.93416595, 10]
-    ], {radius: 25}).addTo(mymap);
+  ], {radius: 25}).addTo(mymap); */
     $.ajax({
       url: "http://localhost:3000/gatherData"
     }).done(function(res) {
       console.log(res);
+      var coor = [];
+      for (var i = 0; i < res.length; i++) {
+        coor.push([res[i].Latitude, res[i].Longitutde, res[i].Amount/50]);
+      }
+      var heat = L.heatLayer(coor, {radius: 25}).addTo(mymap);
     });
