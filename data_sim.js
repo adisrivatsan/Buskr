@@ -66,7 +66,6 @@ var SanJoseRand = function(numPoints) {
   for (var i = 0; i < numPoints; i++) {
     var plusOrMinus = Math.random() < 0.5 ? Math.random() * -1 : Math.random();
     var longitude = center[1] + plusOrMinus * radius;
-    console.log(longitude);
     var plusOrMinus = Math.random() < 0.5 ? Math.random() * -1 : Math.random();
     var latitude = center[0] + plusOrMinus * radius;
 
@@ -80,8 +79,6 @@ var SanJoseRand = function(numPoints) {
   }
 
 }
-
-//console.log(distanceFunc(0, 0, 1, 0))
 
 console.log(SanJoseRand(10));
 
