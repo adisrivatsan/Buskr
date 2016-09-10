@@ -46,10 +46,6 @@ var genericSchema = mongoose.Schema({
    })
  })
 
-<<<<<<< Updated upstream
-//console.log('hello');
-
-
 var newCitySchema = mongoose.Schema({
     Day: Number,
     Month: Number,
@@ -69,12 +65,5 @@ San_Jose.find(function(err,data) {
    })
  })
 
-
-
-
-
-
-=======
->>>>>>> Stashed changes
  app.listen(port);
  console.log("listening on port " + port);

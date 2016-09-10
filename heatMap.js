@@ -38,12 +38,13 @@ var mymap = L.map('mapid').setView([37.34505086, -121.93416595], 13.5);
   })
 
     $.ajax({
-      url: "http://localhost:3000/gatherData"
+      url: "http://localhost:3000/SanJoseData"
     }).done(function(res) {
       console.log(res);
       var coor = [];
       for (var i = 0; i < res.length; i++) {
-        coor.push([res[i].Latitude, res[i].Longitutde, res[i].Amount/45]);
+        console.log(res[i].Amount / 2600);
+        coor.push([res[i].Latitude, res[i].Longitutde, res[i].Amount/2600]);
       }
       var heat = L.heatLayer(coor, {radius: 35}).addTo(mymap);
     });
