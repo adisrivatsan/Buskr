@@ -13,6 +13,24 @@ var heatMapSchema = mongoose.Schema({
   City:String
 })
 
+var newCitySchema = mongoose.Schema({
+    Day: Number,
+    Month: Number,
+    Year: Number,
+    Amount: Number,
+    Latitude: Number,
+    Longitutde: Number,
+    City:String
+})
+
+var heatMap = mongoose.model('San Jose', newCitySchema);
+
+heatMap.find(function(err, res) {
+  console.log(res);
+});
+
+
+
 
 var randomObjects = [];
 
@@ -80,7 +98,7 @@ var SanJoseRand = function(numPoints) {
 
 }
 
-console.log(SanJoseRand(10));
+//console.log(SanJoseRand(10));
 
 /*
 

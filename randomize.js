@@ -93,7 +93,6 @@ var SanJoseRand = function(numPoints) {
   var center = [37.34505086, -121.93416595];
   var radius = 0.0742765
   for (var i = 0; i < numPoints; i++) {
-    console.log("one")
     var plusOrMinus = Math.random() < 0.5 ? Math.random() * -1 : Math.random();
     var longitude = center[1] + plusOrMinus * radius;
     var plusOrMinus = Math.random() < 0.5 ? Math.random() * -1 : Math.random();
