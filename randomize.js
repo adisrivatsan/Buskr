@@ -108,7 +108,7 @@ var SanJoseRand = function(numPoints) {
 
 }
 
-var array = SanJoseRand(100);
+var array = SanJoseRand(1000);
 
 
 
