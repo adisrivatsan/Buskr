@@ -36,6 +36,7 @@ var mymap = L.map('mapid').setView([37.34505086, -121.93416595], 13.5);
   $("#sanfrancisco").click(function() {
     mymap.setView([37.78769136, -122.40731835], 13.5)
   })
+
     $.ajax({
       url: "http://localhost:3000/gatherData"
     }).done(function(res) {

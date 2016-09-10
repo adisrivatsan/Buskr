@@ -46,6 +46,7 @@ var genericSchema = mongoose.Schema({
    })
  })
 
+<<<<<<< Updated upstream
 //console.log('hello');
 
 
@@ -73,5 +74,7 @@ San_Jose.find(function(err,data) {
 
 
 
+=======
+>>>>>>> Stashed changes
  app.listen(port);
  console.log("listening on port " + port);
