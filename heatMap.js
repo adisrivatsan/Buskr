@@ -24,6 +24,18 @@ var mymap = L.map('mapid').setView([37.34505086, -121.93416595], 13.5);
     [37.34505086, -121.93416595, 5],
     [37.34505086, -121.93416595, 10]
   ], {radius: 25}).addTo(mymap); */
+
+  $("#sanjose").click(function() {
+    mymap.setView([37.34505086, -121.93416595], 13.5)
+  })
+
+  $("#newyork").click(function() {
+    mymap.setView([40.73122637, -73.99525881], 15.3)
+  })
+
+  $("#sanfrancisco").click(function() {
+    mymap.setView([37.78769136, -122.40731835], 13.5)
+  })
     $.ajax({
       url: "http://localhost:3000/gatherData"
     }).done(function(res) {
@@ -32,5 +44,5 @@ var mymap = L.map('mapid').setView([37.34505086, -121.93416595], 13.5);
       for (var i = 0; i < res.length; i++) {
         coor.push([res[i].Latitude, res[i].Longitutde, res[i].Amount/45]);
       }
-      var heat = L.heatLayer(coor, {radius: 40}).addTo(mymap);
+      var heat = L.heatLayer(coor, {radius: 35}).addTo(mymap);
     });
