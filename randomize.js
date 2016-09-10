@@ -77,8 +77,8 @@ var SanJoseRand = function(numPoints) {
   var longitudes = [];
   var amounts = [];
 
-  var hotspot_lat = [37.27077436];
-  var hotspot_long = [-121.93141937];
+  var hotspot_lat = [37.809085,37.792879,37.80048,37.787938,37.79057,37.784681,37.690508,37.785798,37.778535,37.759816,37.784983,37.781147,37.782832,37.762033,37.725889,37.722769,37.723254,37.801339,37.790577,37.776565,37.794136,37.802899,37.785907,37.784118,37.791848,37.773765,37.791835,37.947719,37.32972,37.349098,37.349952,37.365674,37.370875,37.331436,37.336521,37.330736,37.326862,];
+  var hotspot_long = [-122.417199,-122.397087,-122.401347,-122.407506,-122.405573,-122.407368,-122.473503,-122.402424,-122.389483,-122.426019,-122.432637,-122.484826,-122.463101,-122.434759,-122.451071-122.476717,-122.44384,-122.458599,-122.459872,-122.450261,-122.404939,-122.448774,-122.4008,-122.406435,-122.406843,-122.432495,-122.413343,-122.344712,-121.88963,-121.893496,-121.940608,-121.925342,-121.995473,-121.890214,-121.894321,-121.894228,-121.892093, -122.401347];
 
   /*
   Center:
@@ -87,10 +87,13 @@ var SanJoseRand = function(numPoints) {
 
   0.0742765
   */
+  console.log(hotspot_long.length);
+  console.log(hotspot_lat.length);
 
   var center = [37.34505086, -121.93416595];
   var radius = 0.0742765
   for (var i = 0; i < numPoints; i++) {
+    console.log("one")
     var plusOrMinus = Math.random() < 0.5 ? Math.random() * -1 : Math.random();
     var longitude = center[1] + plusOrMinus * radius;
     var plusOrMinus = Math.random() < 0.5 ? Math.random() * -1 : Math.random();
@@ -101,14 +104,16 @@ var SanJoseRand = function(numPoints) {
     latitudes.push(latitude);
     longitudes.push(longitude);
     amounts.push(amount);
-
-    return [latitudes, longitudes, amounts];
   }
+  return [latitudes, longitudes, amounts];
 
 }
 
+var array = SanJoseRand(100);
 
-createDBObj('New Jersey',[1,2,3],[2,3,4],[3.4,5.6,6.7]);
+
+
+createDBObj('San Jose',array[0] ,array[1], array[2]);
 
 
 /*for (var i = 0; i < 1000; i++) {
