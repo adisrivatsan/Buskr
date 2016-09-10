@@ -16,6 +16,16 @@ var heatMapSchema = mongoose.Schema({
 })
 var heatMap = mongoose.model('heatMap', heatMapSchema);
 
+var genericSchema = mongoose.Schema({
+  Day: Number,
+  Month: Number,
+  Year: Number,
+  Amount: Number,
+  Latitude: Number,
+  Longitutde: Number,
+  City:String
+})
+
 
  var app = express();
  var port = process.env.PORT || 3000;
@@ -32,7 +42,7 @@ var heatMap = mongoose.model('heatMap', heatMapSchema);
  heatMap.find(function(err,data) {
    //console.log(data);
    app.get('/gatherData',function(req,res) {
-     res.send(data); 
+     res.send(data);
    })
  })
 

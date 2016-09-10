@@ -14,10 +14,53 @@ var heatMapSchema = mongoose.Schema({
   VendorName: String,
   City:String
 })
+var heatMap = mongoose.model('heatMap', heatMapSchema);
+
+
 
 var randomObjects = [];
 
-for (var i = 0; i < 1000; i++) {
+var createDBObj = function(city,listLong,listLat,amountList) {
+  var emptyArr = [];
+  var newCitySchema = mongoose.Schema({
+    Day: Number,
+    Month: Number,
+    Year: Number,
+    Amount: Number,
+    Latitude: Number,
+    Longitutde: Number,
+    City:String
+  })
+  var newCity = mongoose.model(city, newCitySchema);
+
+  for (var i = 0; i < listLong.length; i++) {
+    var day = Math.round( Math.random() * 30 + 1);
+    var month = Math.round(Math.random() * 12 + 1);
+    var year = 2015;
+    var amount = amountList[i];
+    var latitude = listLat[i];
+    var longitude = listLong[i];
+    var city = city;
+    emptyArr.push(Object.assign({}, {Day:day,Month:month,Year:year,
+    Amount:amount, Latitude: latitude, Longitutde: longitude, City: city}));
+
+  }
+  var arrayFunc = [];
+  for (var i = 0; i < emptyArr.length; i++) {
+    arrayFunc.push(new newCity(emptyArr[i]).save());
+  }
+  Q.all(arrayFunc).then(function(data) {
+    console.log('done');
+  })
+
+
+
+}
+
+createDBObj('New Jersey',[1,2,3],[2,3,4],[3.4,5.6,6.7]);
+
+
+/*for (var i = 0; i < 1000; i++) {
   var day = Math.round( Math.random() * 30 + 1);
   var month = Math.round(Math.random() * 12 + 1);
   var year = 2015;
@@ -31,7 +74,7 @@ for (var i = 0; i < 1000; i++) {
   Amount:amount, Latitude: latitude, Longitutde: longitude, City: city}));
 }
 
-var heatMap = mongoose.model('heatMap', heatMapSchema);
+
 var obj = new heatMap({
   Day: 12,
   Month: 10,
@@ -48,6 +91,7 @@ for (var i = 0; i < randomObjects.length; i++) {
 Q.all(arrayFunc).then(function(data) {
   console.log('done');
 })
+ */
 /*heatMap.find(function(err,data) {
 var dataID = _.map(data, function(num) {
   return num._id;
