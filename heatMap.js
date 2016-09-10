@@ -1,4 +1,4 @@
-var mymap = L.map('mapid').setView([37.34505086, -121.93416595], 13);
+var mymap = L.map('mapid').setView([37.34505086, -121.93416595], 13.5);
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
         maxZoom: 18,
@@ -30,7 +30,7 @@ var mymap = L.map('mapid').setView([37.34505086, -121.93416595], 13);
       console.log(res);
       var coor = [];
       for (var i = 0; i < res.length; i++) {
-        coor.push([res[i].Latitude, res[i].Longitutde, res[i].Amount/50]);
+        coor.push([res[i].Latitude, res[i].Longitutde, res[i].Amount/45]);
       }
-      var heat = L.heatLayer(coor, {radius: 25}).addTo(mymap);
+      var heat = L.heatLayer(coor, {radius: 40}).addTo(mymap);
     });
