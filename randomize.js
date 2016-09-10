@@ -17,7 +17,6 @@ var heatMapSchema = mongoose.Schema({
 var heatMap = mongoose.model('heatMap', heatMapSchema);
 
 
-
 var randomObjects = [];
 
 var createDBObj = function(city,listLong,listLat,amountList) {
@@ -54,7 +53,6 @@ var createDBObj = function(city,listLong,listLat,amountList) {
   })
 
 
-
 }
 
 var distanceFunc = function(x1, y1, x2, y2) {
@@ -71,6 +69,11 @@ var weightedAmount = function(x, y, xlist, ylist) {
 
 //37.27077436
 //-121.93141937
+
+//Left -122.04231
+//Right -121.8255
+//Up 37.42334
+//Down 37.26426
 
 var SanJoseRand = function(numPoints) {
   var latitudes = [];
@@ -93,11 +96,14 @@ var SanJoseRand = function(numPoints) {
   var center = [37.34505086, -121.93416595];
   var radius = 0.0742765
   for (var i = 0; i < numPoints; i++) {
+    /*
     var plusOrMinus = Math.random() < 0.5 ? Math.random() * -1 : Math.random();
     var longitude = center[1] + plusOrMinus * radius;
     var plusOrMinus = Math.random() < 0.5 ? Math.random() * -1 : Math.random();
     var latitude = center[0] + plusOrMinus * radius;
-
+    */
+    var longitude = -122.04231 + (Math.random() * Math.abs(-121.8255 - -122.04231));
+    var latitude = 37.26426 + (Math.random() * (37.42334 - 37.26426));
     var amount = weightedAmount(latitude, longitude, hotspot_lat, hotspot_long);
 
     latitudes.push(latitude);
