@@ -49,6 +49,27 @@ var genericSchema = mongoose.Schema({
 //console.log('hello');
 
 
+var newCitySchema = mongoose.Schema({
+    Day: Number,
+    Month: Number,
+    Year: Number,
+    Amount: Number,
+    Latitude: Number,
+    Longitutde: Number,
+    City:String
+  })
+
+var San_Jose = mongoose.model('San Jose', newCitySchema);
+
+San_Jose.find(function(err,data) {
+   //console.log(data);
+   app.get('/SanJoseData',function(req,res) {
+     res.send(data);
+   })
+ })
+
+
+
 
 
 
