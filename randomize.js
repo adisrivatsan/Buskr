@@ -112,7 +112,7 @@ var array = SanJoseRand(100);
 
 
 
-createDBObj('San Jose',array[0] ,array[1], array[2]);
+createDBObj('San Jose',array[1] ,array[0], array[2]);
 
 
 /*for (var i = 0; i < 1000; i++) {
