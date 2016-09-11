@@ -132,10 +132,10 @@ var NewYork = function(numPoints) {
   var hotspot_long = [-73.985664,-73.974187,-73.987177,-75.176826,-73.978209,-73.996985,-73.996864,-73.984472,-73.080967,-74.008801,-73.976299, -71.05732];
 
   /* Center:
-  Left: -73.9897
-  Right: -73.99176
-  Up: 40.73149
-  Down: 40.73071
+  Left: -74.01013
+  Right: -73.97464
+  Up: 40.74043
+  Down: 40.72332
   */
 
   for (var i = 0; i < numPoints; i++) {
@@ -145,8 +145,8 @@ var NewYork = function(numPoints) {
     var plusOrMinus = Math.random() < 0.5 ? Math.random() * -1 : Math.random();
     var latitude = center[0] + plusOrMinus * radius;
     */
-    var longitude = -73.9897 + (Math.random() * Math.abs(73.9897 - 73.99176));
-    var latitude = 40.73071 + (Math.random() * (40.73149 - 40.73071));
+    var longitude = -74.01013 + (Math.random() * Math.abs(74.01013 - 73.97464));
+    var latitude = 40.72332 + (Math.random() * (40.74043 - 40.72332));
     var amount = weightedAmount(latitude, longitude, hotspot_lat, hotspot_long);
 
     latitudes.push(latitude);
