@@ -38,7 +38,7 @@ var mymap = L.map('mapid').setView([37.34505086, -121.93416595], 13.5);
   })
 
     $.ajax({
-      url: "http://localhost:3000/SanJoseData"
+      url: "http://buskr.gq/SanJoseData"
     }).done(function(res) {
       console.log(res);
       var coor = [];
