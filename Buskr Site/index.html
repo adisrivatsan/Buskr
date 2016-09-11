@@ -187,13 +187,13 @@
         if (textValue == "750 Kearny Street") {
             document.getElementById('hiddenPic1').style.display = "block";
             addressRandomize();
-        } else if (textValue.length < 3) {
+        } else if (textValue.length < 4) {
             document.getElementById("suggested").style.display = "block"
             document.getElementById("suggested").innerHTML = "Please enter a valid location"
-        } else if (textValue.length < 6) {
+        } else if (textValue.length < 8) {
             document.getElementById('hiddenPic3').style.display = "block";
              addressRandomize();
-        } else if (textValue.length < 9) {
+        } else if (textValue.length < 12) {
             document.getElementById('hiddenPic4').style.display = "block";
             addressRandomize();
         } else if (textValue.length != 0) {
