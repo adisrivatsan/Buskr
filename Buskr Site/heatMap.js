@@ -43,7 +43,6 @@ var mymap = L.map('mapid').setView([37.34505086, -121.93416595], 13.5);
       console.log(res);
       var coor = [];
       for (var i = 0; i < res.length; i++) {
-        console.log(res[i].Amount / 2600);
         coor.push([res[i].Latitude, res[i].Longitutde, res[i].Amount/12000]);
       }
       var heat = L.heatLayer(coor, {radius: 35}).addTo(mymap);

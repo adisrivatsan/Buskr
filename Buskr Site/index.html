@@ -109,9 +109,9 @@
             <form class="form-inline">
             <div class="form-group">
                 <label class="sr-only" for="exampleInputEmail3">Address</label>
-                <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Enter address">
+                <input type="text" class="form-control" id="address" placeholder="Enter address">
             </div>
-            <button type="submit" class="btn btn-primary">Enter</button>
+            <button type="button" class="btn btn-primary" id="buttonEntered">Enter</button>
             </form>
                 </div>
             </div>
@@ -119,6 +119,15 @@
         </div>
         <!-- /.container -->
     </section>
+
+    <br>
+    <div id="hiddenPic1" style="display:none;" align="middle" class="answer_list">
+        <img src="img/1.png">
+    </div>
+
+    <div id="hiddenPic2" style="display:none;" align="middle" class="answer_list">
+        <img src="img/2.png">
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -150,6 +159,19 @@
 
     <script src='heatMap.js'></script>
     <script>
+
+    $("#buttonEntered").click(function() {
+    var textValue = document.getElementById("address").value
+        if (textValue == "750 Kearny Street") {
+            document.getElementById('hiddenPic2').style.display = "none";
+            document.getElementById('hiddenPic1').style.display = "block";
+        } else if (textValue.length != 0) {
+            document.getElementById('hiddenPic1').style.display = "none";
+            document.getElementById('hiddenPic2').style.display = "block";
+        }
+
+    })
+
     var d = new Date();
     document.getElementById("demo").innerHTML = d.toDateString();
 
