@@ -145,7 +145,7 @@ var NewYork = function(numPoints) {
     var plusOrMinus = Math.random() < 0.5 ? Math.random() * -1 : Math.random();
     var latitude = center[0] + plusOrMinus * radius;
     */
-    var longitude = --73.9897 + (Math.random() * Math.abs(73.9897 - 73.99176));
+    var longitude = -73.9897 + (Math.random() * Math.abs(73.9897 - 73.99176));
     var latitude = 40.73071 + (Math.random() * (40.73149 - 40.73071));
     var amount = weightedAmount(latitude, longitude, hotspot_lat, hotspot_long);
 
