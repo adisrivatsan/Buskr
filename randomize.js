@@ -45,9 +45,11 @@ var createDBObj = function(city,listLong,listLat,amountList) {
 
   }
   var arrayFunc = [];
+
   for (var i = 0; i < emptyArr.length; i++) {
     arrayFunc.push(new newCity(emptyArr[i]).save());
   }
+
   Q.all(arrayFunc).then(function(data) {
     console.log('done');
   })
@@ -114,7 +116,7 @@ var SanJoseRand = function(numPoints) {
 
 }
 
-var array = SanJoseRand(1000);
+var array = SanJoseRand(3000);
 
   /* Center:
   Left: -73.9897
@@ -156,9 +158,9 @@ var NewYork = function(numPoints) {
   return [latitudes, longitudes, amounts];
 
 }
-var secondArray = NewYork(1);
+var secondArray = NewYork(500);
 
-var array = [array[1].concat(secondArray[0]), array[0].concat(secondArray[1]), array[2].concat(secondArray[2]) ]
+var array = [array[0].concat(secondArray[0]), array[1].concat(secondArray[1]), array[2].concat(secondArray[2]) ]
 
 createDBObj('San Jose',array[1] ,array[0], array[2]);
 

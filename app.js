@@ -58,8 +58,11 @@ var newCitySchema = mongoose.Schema({
 
 var San_Jose = mongoose.model('San Jose', newCitySchema);
 
+
 San_Jose.find(function(err,data) {
    //console.log(data);
+
+   console.log(data.length);
    app.get('/SanJoseData',function(req,res) {
      res.send(data);
    })
