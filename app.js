@@ -2,7 +2,6 @@ var express = require("express");
 var request = require('request');
 var _ = require('underscore');
 var mongoose = require('mongoose');
-var superagent = require('superagent');
 mongoose.connect('mongodb://adisri:buskr@ds029436.mlab.com:29436/buskrheatmap');
 
 var heatMapSchema = mongoose.Schema({
