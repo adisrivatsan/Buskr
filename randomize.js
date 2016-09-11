@@ -116,7 +116,49 @@ var SanJoseRand = function(numPoints) {
 
 var array = SanJoseRand(1000);
 
+  /* Center:
+  Left: -73.9897
+  Right: -73.99176
+  Up: 40.73149
+  Down: 40.73071
+  */
 
+var NewYork = function(numPoints) {
+  var latitudes = [];
+  var longitudes = [];
+  var amounts = [];
+
+  var hotspot_lat = [340.748441, 40.771133, 40.757825, 39.963802, 40.75861, 40.731412, 40.706086, 40.759011, 40.823164, 40.706001, 40.758545,42.351214];
+  var hotspot_long = [-73.985664,-73.974187,-73.987177,-75.176826,-73.978209,-73.996985,-73.996864,-73.984472,-73.080967,-74.008801,-73.976299, -71.05732];
+
+  /* Center:
+  Left: -73.9897
+  Right: -73.99176
+  Up: 40.73149
+  Down: 40.73071
+  */
+
+  for (var i = 0; i < numPoints; i++) {
+    /*
+    var plusOrMinus = Math.random() < 0.5 ? Math.random() * -1 : Math.random();
+    var longitude = center[1] + plusOrMinus * radius;
+    var plusOrMinus = Math.random() < 0.5 ? Math.random() * -1 : Math.random();
+    var latitude = center[0] + plusOrMinus * radius;
+    */
+    var longitude = --73.9897 + (Math.random() * Math.abs(73.9897 - 73.99176));
+    var latitude = 40.73071 + (Math.random() * (40.73149 - 40.73071));
+    var amount = weightedAmount(latitude, longitude, hotspot_lat, hotspot_long);
+
+    latitudes.push(latitude);
+    longitudes.push(longitude);
+    amounts.push(amount);
+  }
+  return [latitudes, longitudes, amounts];
+
+}
+var secondArray = NewYork(1000);
+
+var array = [array[1].concat(secondArray[1]), array[0].concat(secondArray[0]), array[2].concat(secondArray[2]) ]
 
 createDBObj('San Jose',array[1] ,array[0], array[2]);
 
