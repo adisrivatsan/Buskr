@@ -128,6 +128,13 @@
     <div id="hiddenPic2" style="display:none;" align="middle" class="nonDraggableImage">
         <img src="img/2.png">
     </div>
+
+    <div id="hiddenPic3" style="display:none;" align="middle" class="nonDraggableImage">
+        <img src="img/3.png">
+    </div>
+    <div id="hiddenPic4" style="display:none;" align="middle" class="nonDraggableImage">
+        <img src="img/4.png">
+    </div>
     <br>
     <h2 align="middle" style="font-size: 22px; display:none; color: rgb(0, 153, 51)
 " id="suggested">The suggested address is: </h2>
@@ -172,15 +179,24 @@
 
     $("#buttonEntered").click(function() {
     var textValue = document.getElementById("address").value
+    document.getElementById('hiddenPic2').style.display = "none";
+    document.getElementById('hiddenPic1').style.display = "none";
+    document.getElementById('hiddenPic3').style.display = "none";
+    document.getElementById('hiddenPic4').style.display = "none";
+
         if (textValue == "750 Kearny Street") {
-            document.getElementById('hiddenPic2').style.display = "none";
             document.getElementById('hiddenPic1').style.display = "block";
             addressRandomize();
         } else if (textValue.length < 3) {
             document.getElementById("suggested").style.display = "block"
             document.getElementById("suggested").innerHTML = "Please enter a valid location"
+        } else if (textValue.length < 6) {
+            document.getElementById('hiddenPic3').style.display = "block";
+             addressRandomize();
+        } else if (textValue.length < 9) {
+            document.getElementById('hiddenPic4').style.display = "block";
+            addressRandomize();
         } else if (textValue.length != 0) {
-            document.getElementById('hiddenPic1').style.display = "none";
             document.getElementById('hiddenPic2').style.display = "block";
             addressRandomize();
         }
