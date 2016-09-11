@@ -2,6 +2,7 @@ var express = require("express");
 var request = require('request');
 var _ = require('underscore');
 var mongoose = require('mongoose');
+var superagent = require('superagent');
 mongoose.connect('mongodb://adisri:buskr@ds029436.mlab.com:29436/buskrheatmap');
 
 var heatMapSchema = mongoose.Schema({
@@ -25,6 +26,62 @@ var genericSchema = mongoose.Schema({
   Longitutde: Number,
   City:String
 })
+
+//ee9b2de1ee73875bcce3cd888ef9bd90
+/*
+{
+  "code": 0,
+  "message": "string",
+  "objectCreated": {
+    "_id": "string",
+    "type": "p2p",
+    "transaction_date": "2016-09-11",
+    "status": "pending",
+    "medium": "balance",
+    "payer_id": "string",
+    "payee_id": "string",
+    "amount": 0.01,
+    "description": "string"
+  }
+}
+*/
+
+/*
+Object = Object.assign({}, {code:0, message:"Transaction",objectCreated: {_id:"wa2101012",type:"p2p",transaction_date:"2016-09-11",
+status:"pending",medium:"balance",payer_id:"ac12e0casc",payee_id:"a12e0casc00",amount:0.01,description:"Transaction"}})
+*/
+
+/*
+
+var customer = Object.assign({
+  code: 0,
+  message: "string",
+  objectCreated: {
+    _id: "string",
+    first_name: "string",
+    last_name: "string",
+    address: {
+      street_number: "string",
+      street_name: "string",
+      city: "string",
+      state: "string",
+      zip: "string"
+    }
+  }
+})
+
+superagent.post('http://api.reimaginebanking.com/accounts/?key=ee9b2de1ee73875bcce3cd888ef9bd90')
+    .send(customer)
+    .end(function(err) {
+      console.log(err);
+    });
+
+superagent.get('http://api.reimaginebanking.com/accounts/?key=ee9b2de1ee73875bcce3cd888ef9bd90').end(function(res){
+    console.log(res);
+    console.log(res); //do something
+});
+
+*/
 
 
  var app = express();
