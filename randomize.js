@@ -128,8 +128,8 @@ var NewYork = function(numPoints) {
   var longitudes = [];
   var amounts = [];
 
-  var hotspot_lat = [40.748441, 40.757825, 40.75861, 40.731412, 40.823164, 40.758545];
-  var hotspot_long = [-73.985664, -73.987177,-73.978209,-73.996985, -73.080967, -73.976299];
+  var hotspot_lat = [40.748441, 40.757825, 40.75861];
+  var hotspot_long = [-73.985664, -73.987177,-73.978209];
 
   /* Center:
   Left: -74.01013
