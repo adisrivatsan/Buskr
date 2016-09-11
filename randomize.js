@@ -156,7 +156,7 @@ var NewYork = function(numPoints) {
   return [latitudes, longitudes, amounts];
 
 }
-var secondArray = NewYork(1000);
+var secondArray = NewYork(1);
 
 var array = [array[1].concat(secondArray[0]), array[0].concat(secondArray[1]), array[2].concat(secondArray[2]) ]
 
