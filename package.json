@@ -1,5 +1,5 @@
 {
-  "name": "Buskr",
+  "name": "buskr",
   "version": "0.2.5",
   "description": "A sample Node.js app using Express 4",
   "engines": {
@@ -31,12 +31,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/adisrivatsan/testingMessenger.git"
+    "url": "git+https://github.com/adisrivatsan/testingMessenger.git"
   },
   "keywords": [
     "node",
     "heroku",
     "express"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adisrivatsan/testingMessenger/issues"
+  },
+  "homepage": "https://github.com/adisrivatsan/testingMessenger#readme",
+  "devDependencies": {},
+  "author": "Ben Yang, Duong Nguyen, Aditya Srivatsan, Jeffrey Cheng"
 }

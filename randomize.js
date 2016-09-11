@@ -107,7 +107,7 @@ var SanJoseRand = function(numPoints) {
     */
     var longitude = -122.04231 + (Math.random() * Math.abs(-121.8255 - -122.04231));
     var latitude = 37.26426 + (Math.random() * (37.42334 - 37.26426));
-    var amount = weightedAmount(latitude, longitude, hotspot_lat, hotspot_long);
+    var amount = (weightedAmount(latitude, longitude, hotspot_lat, hotspot_long))/2;
 
     latitudes.push(latitude);
     longitudes.push(longitude);
@@ -122,7 +122,7 @@ Down: 37.71777559
 LeftUp: 37.78468978
 RightUp: 37.80205314
 */
-  for (var i = 0; i < 500; i++) {
+  for (var i = 0; i < 3000; i++) {
     /*
     var plusOrMinus = Math.random() < 0.5 ? Math.random() * -1 : Math.random();
     var longitude = center[1] + plusOrMinus * radius;
@@ -136,7 +136,7 @@ RightUp: 37.80205314
     else {
       var latitude = 37.71777559 + (Math.random() * (37.78468978 - 37.71777559));
     }
-    var amount = weightedAmount(latitude, longitude, hotspot_lat, hotspot_long);
+    var amount = (weightedAmount(latitude, longitude, hotspot_lat, hotspot_long))/8;
 
     latitudes.push(latitude);
     longitudes.push(longitude);
@@ -148,7 +148,7 @@ RightUp: 37.80205314
   return [latitudes, longitudes, amounts];
 }
 
-var array = SanJoseRand(3000);
+var array = SanJoseRand(5000);
 
   /* Center:
   Left: -73.9897
@@ -181,7 +181,7 @@ var NewYork = function(numPoints) {
     */
     var longitude = -74.01013 + (Math.random() * Math.abs(74.01013 - 73.97464));
     var latitude = 40.72332 + (Math.random() * (40.74043 - 40.72332));
-    var amount = weightedAmount(latitude, longitude, hotspot_lat, hotspot_long);
+    var amount = (weightedAmount(latitude, longitude, hotspot_lat, hotspot_long))/1.5;
 
     latitudes.push(latitude);
     longitudes.push(longitude);
