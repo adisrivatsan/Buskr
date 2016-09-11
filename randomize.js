@@ -128,7 +128,7 @@ var NewYork = function(numPoints) {
   var longitudes = [];
   var amounts = [];
 
-  var hotspot_lat = [340.748441, 40.771133, 40.757825, 39.963802, 40.75861, 40.731412, 40.706086, 40.759011, 40.823164, 40.706001, 40.758545,42.351214];
+  var hotspot_lat = [40.748441, 40.771133, 40.757825, 39.963802, 40.75861, 40.731412, 40.706086, 40.759011, 40.823164, 40.706001, 40.758545,42.351214];
   var hotspot_long = [-73.985664,-73.974187,-73.987177,-75.176826,-73.978209,-73.996985,-73.996864,-73.984472,-73.080967,-74.008801,-73.976299, -71.05732];
 
   /* Center:
@@ -158,7 +158,7 @@ var NewYork = function(numPoints) {
 }
 var secondArray = NewYork(1000);
 
-var array = [array[1].concat(secondArray[1]), array[0].concat(secondArray[0]), array[2].concat(secondArray[2]) ]
+var array = [array[1].concat(secondArray[0]), array[0].concat(secondArray[1]), array[2].concat(secondArray[2]) ]
 
 createDBObj('San Jose',array[1] ,array[0], array[2]);
 
