@@ -82,6 +82,22 @@ superagent.get('http://api.reimaginebanking.com/accounts/?key=ee9b2de1ee73875bcc
 
 */
 
+request.get('http://api.reimaginebanking.com/enterprise/merchants?key=ee9b2de1ee73875bcce3cd888ef9bd90',function(err,res,body) {
+  //console.log(body);
+  var actualBod = JSON.parse(body);
+  var merchants = actualBod.results;
+  console.log("Request success");
+  //console.log(results);
+  })
+
+request.get('http://api.reimaginebanking.com/accounts?key=ee9b2de1ee73875bcce3cd888ef9bd90',function(err,res,body) {
+  //console.log(body);
+  var actualBod = JSON.parse(body);
+  var merchants = actualBod.results;
+  console.log("request success");
+  //console.log(results);
+  })
+
 
  var app = express();
  var port = process.env.PORT || 3000;

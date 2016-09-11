@@ -35,11 +35,14 @@ request.get('http://api.reimaginebanking.com/enterprise/merchants?key=373b787e00
     console.log('Merchant is here ' + findMerchantGivenID('5709deb8059d0946504a0e1d'));
 
     //var FinalTuple = [];
+    /*
     for (var i = 0; i < transferData.length; i++) {
       var merchObj = findMerchantGivenID(transferData[i].id)
 
         if(transferData[i]){
           //FinalTuple.push(Object.assign({}, {date:transferData[i].date, ammount: transferData[i].amount, lat:merchObj.geocode.lat, long: merchObj.geocode.long, name: merchObj.name}));
+
+    */
 
 
     }
